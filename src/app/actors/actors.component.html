@@ -1,0 +1,11 @@
+<div class="row">
+    <div *ngFor="let People of Actors" class="col-md-2">
+        <a [routerLink]="['/details' , People.id,mediaType]">
+    
+            <div class="my-2 position-relative" >
+                <img [src]="imgBaseUrl+People.profile_path" class="w-100" alt="">
+                <h3 class="h5 py-2">{{People.name}}</h3>
+            </div>
+        </a>
+    </div>
+</div>

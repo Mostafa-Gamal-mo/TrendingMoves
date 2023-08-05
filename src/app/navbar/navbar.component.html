@@ -1,0 +1,59 @@
+<div>
+  <nav class="navbar navbar-expand-sm navbar-expand-lg navbar-expand-md navbar-dark bg-transparent">
+    <div class="container-fluid">
+      <a class="navbar-brand text-light" routerLink='home'>
+        <h3>Noxe</h3>
+      </a>
+
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+
+          <li *ngIf="isLogin" class="nav-item">
+            <a class="nav-link active" routerLinkActive="activeL" routerLink='home'>Home</a>
+          </li>
+          <li  *ngIf="isLogin"class="nav-item">
+            <a class="nav-link active" routerLinkActive="activeL" routerLink='movies'>Movies</a>
+          </li>
+
+          <li *ngIf="isLogin" class="nav-item">
+            <a class="nav-link active" routerLinkActive="activeL" routerLink='tv'>Tvshow</a>
+          </li>
+          <li *ngIf="isLogin" class="nav-item">
+            <a class="nav-link active" routerLinkActive="activeL" routerLink='actors'>Actors</a>
+          </li>
+
+
+
+        </ul>
+        <ul class="navbar-nav mb-2 mb-lg-0 ">
+
+          <li class="nav-item d-flex align-items-center ">
+            <i class='fab mx-2 fa-facebook '></i>
+            <i class='fab mx-2 fa-twitter'></i>
+            <i class='fab mx-2 fa-instagram'></i>
+            <i class='fab mx-2 fa-soundcloud'></i>
+          </li>
+
+
+
+          <li *ngIf="isLogin" class="nav-item cursor-pointer">
+            <span (click)="logOut()" class="nav-link ">Logout</span>
+          </li>
+
+
+          <li *ngIf="!isLogin" class="nav-item">
+            <a class="nav-link active" routerLinkActive="activeL" routerLink='register'>Register</a>
+          </li>
+
+          <li *ngIf="!isLogin" class="nav-item">
+            <a class="nav-link active" routerLinkActive="activeL" routerLink='login'>Login</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+

@@ -1,0 +1,36 @@
+<div class="row ">
+    <div class="col-md-3">
+        <img *ngIf="item.profile_path" [src]="'https://image.tmdb.org/t/p/w500'+item.profile_path" class="w-100" alt="">
+        <img *ngIf="item.poster_path" [src]="'https://image.tmdb.org/t/p/w500'+item.poster_path" class="w-100" alt="">
+    </div>
+    <div class="col-md-6 d-flex align-items-center justify-content-center">
+
+        <div class="">
+            <h2 class="my-2">{{item.title}} {{item.name}}</h2>
+        
+            <p class="text-muted my-2 ">{{item.overview}} {{item.biography}}</p>
+            <div *ngIf="item.vote_average">Vote Average : {{item.vote_average}}</div>
+            <div *ngIf="item.vote_count">Vote Count : {{item.vote_average}}</div>
+            <div *ngIf="item.budget">Budget : {{item.budget}}</div>
+            <div *ngIf="item.revenue">Revenue : {{item.revenue}}</div>
+            <div *ngIf="item.birthday">Birthday : {{item.birthday}}</div>
+            <div *ngIf="item.place_of_birth">Place Of Birth : {{item.place_of_birth}}</div>
+
+        </div>
+
+    </div>
+</div>
+<div class="row my-4">
+
+    <h3 *ngIf="item.name && item.vote_average && similar.length">Similar Tv</h3>
+    <h3 *ngIf="item.title">Similar Movies</h3>
+    <div *ngFor="let movie of similar" class="col-md-2">
+            <div (click)="antherDetails(movie.id,media_Type)" class="my-2 position-relative">
+                <img [src]="'https://image.tmdb.org/t/p/w500'+movie.poster_path" class="w-100" alt="">
+                <h3 class="h5 py-2">{{movie.title}} {{item.name}}</h3>
+                <div class="vote p-1 top-0 end-0 position-absolute bg-info">{{movie.vote_average.toFixed(1)}}</div>
+            </div>
+        
+    </div>
+</div>
+
